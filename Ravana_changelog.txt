@@ -28,7 +28,10 @@ Changed fog clearing from 1.10 hack to modify_side
 Laela -> Ravana
 Removed old feedback link
 
-1.2-dev
+1.2.1
 
 Moved binary_path in multiplayer define and added final /
 Fixed spelling sellect->select
+Added color mod to dependency
+Option to pick 4 random items(max 1 scroll) instead of 3 chosen, requested by Lollipop
+Removed lms

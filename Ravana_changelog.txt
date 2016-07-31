@@ -35,3 +35,7 @@ Fixed spelling sellect->select
 Added color mod to dependency
 Option to pick 4 random items(max 1 scroll) instead of 3 chosen, requested by Lollipop
 Removed lms
+
+1.2.2
+
+Added option to allow recall from previous tournament stages

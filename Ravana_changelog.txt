@@ -39,3 +39,7 @@ Removed lms
 1.2.2
 
 Added option to allow recall from previous tournament stages
+
+1.2.2a
+
+Added recall for final

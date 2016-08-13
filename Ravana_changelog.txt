@@ -43,3 +43,7 @@ Added option to allow recall from previous tournament stages
 1.2.2a
 
 Added recall for final
+
+1.2.3
+
+Walls to castle transition delayed 1 turn

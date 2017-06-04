@@ -47,3 +47,8 @@ Added recall for final
 1.2.3
 
 Walls to castle transition delayed 1 turn
+
+2.0
+
+Item picking happens simultaneously, like in PYR NPT
+Side effect, random may give multiple scrolls now

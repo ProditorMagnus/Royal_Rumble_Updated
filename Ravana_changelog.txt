@@ -52,3 +52,11 @@ Walls to castle transition delayed 1 turn
 
 Item picking happens simultaneously, like in PYR NPT
 Side effect, random may give multiple scrolls now
+
+2.0.1
+
+Try detect if item picking failed, and give random then
+
+2.0.2
+
+Terrain def for reef, rails, unwalkable, impassable

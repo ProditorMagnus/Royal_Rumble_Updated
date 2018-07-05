@@ -193,7 +193,7 @@ for i,v in ipairs(wesnoth.get_sides()) do
 	for t_i, t_v in ipairs(_names) do
 		names[t_i] = t_v
 	end
-	
+
 	if v.controller == "human" and v.is_local then
 		items_taken = 1
 		_side_number = i
@@ -233,13 +233,29 @@ for i,v in ipairs(wesnoth.get_sides()) do
 				variables[t_i] = t_v
 			end
 			random_items = 0
+			local scroll_count = 0
 			while random_items < 4 do
 				wesnoth.fire("set_variable", { name = "LUA_random", rand = string.format("%d..%d", 1, #variables) })
 				local rand = wesnoth.get_variable "LUA_random"
 				wesnoth.set_variable "LUA_random"
-				wesnoth.set_variable(tostring(i)..variables[rand], 1)
-				table.remove(variables, rand)
-				random_items = random_items + 1
+
+				if variables[rand]:find("scroll") then
+					if scroll_count > 1 then
+						-- continue
+						table.remove(variables, rand)
+					else
+						-- increment scroll_count, and use selection
+						scroll_count = scroll_count + 1
+						wesnoth.set_variable(tostring(i)..variables[rand], 1)
+						table.remove(variables, rand)
+						random_items = random_items + 1
+					end
+				else
+					-- use selection
+					wesnoth.set_variable(tostring(i)..variables[rand], 1)
+					table.remove(variables, rand)
+					random_items = random_items + 1
+				end
 			end
 			items_taken = 4
 		else

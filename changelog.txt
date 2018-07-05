@@ -65,3 +65,7 @@ Terrain def for reef, rails, unwalkable, impassable
 
 Port for 1.14
 Removed dependencies
+
+2.0.3a
+
+Limited random scrolls to 2

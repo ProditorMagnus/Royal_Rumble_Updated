@@ -36,7 +36,7 @@ end
 function clear_global_variable(namespace, name, side)
 	wesnoth.wml_actions.set_global_variable {
 		namespace=namespace,
-		global=name,
+		to_global=name,
 		side=side,
 		immediate=true,
 	}
@@ -201,7 +201,7 @@ for i,v in ipairs(wesnoth.get_sides()) do
 			_items_taken = items_taken -1
 		-- show this multiple times, marking previous selections
 			local r = wesnoth.show_dialog(dialog, preshow, postshow)
-			wesnoth.message(string.format("Button %d pressed. Item %s selected.", r, variables[li]))
+			-- wesnoth.message(string.format("Button %d pressed. Item %s selected.", r, variables[li]))
 			
 			
 			if r == -2 then
@@ -226,7 +226,7 @@ for i,v in ipairs(wesnoth.get_sides()) do
 	while items_taken < 4 do
 		r = get_global_variable(namespace, "item_choice_"..tostring(i).."_"..tostring(items_taken), v.side)
 		clear_global_variable(namespace, "item_choice_"..tostring(i).."_"..tostring(items_taken), v.side)
-		wesnoth.message("SYNCED " .. tostring(i) .. tostring(items_taken) .. r)
+		-- wesnoth.message("SYNCED " .. tostring(i) .. tostring(items_taken) .. r)
 		if r == _random_id then
 			-- pick and set 4 unique value from table
 			for t_i, t_v in ipairs(_variables) do

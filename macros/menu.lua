@@ -150,7 +150,7 @@ local dialog = {
       } } },
       T.row { T.column { T.grid { T.row {
         T.column { T.button { id = "ok", label = _"OK" } },
-        T.column { T.button { id = "cancel", label = _"4 Random items (discard seleced)" } }
+        T.column { T.button { id = "cancel", label = _"4 Random items (max 2 scrolls, but 2 scrolls is very likely) (discard seleced)" } }
       } } } }
     } },
     T.column { T.image { id = "the_image" } }
@@ -181,6 +181,21 @@ local function postshow()
     li = wesnoth.get_dialog_value "the_list"
 end
 
+local function do_nothing() end
+
+local delay_dialog = {
+  T.tooltip { id = "tooltip_large" },
+  T.helptip { id = "tooltip_large" },
+  T.grid { T.row {
+    T.column { T.grid {
+      T.row { T.column { T.grid { T.row {
+        T.column { T.button { id = "ok", label = _"I have seen my leader now" } }
+      } } } }
+    } },
+    T.column { T.image { id = "the_image" } }
+  } }
+}
+
 local namespace = "RR"
 
 for i,v in ipairs(wesnoth.get_sides()) do
@@ -197,6 +212,12 @@ for i,v in ipairs(wesnoth.get_sides()) do
 	if v.controller == "human" and v.is_local then
 		items_taken = 1
 		_side_number = i
+		local u = wesnoth.get_units({ side = i, canrecruit = true })[1]
+		wesnoth.fire("remove_shroud", { x=u.x, y=u.y })
+		wesnoth.fire("lift_fog", { x=u.x, y=u.y })
+		wesnoth.select_hex(u.x, u.y)
+		wesnoth.fire("redraw")
+		-- wesnoth.show_dialog(delay_dialog, do_nothing, do_nothing)
 		while items_taken < 4 do
 			_items_taken = items_taken -1
 		-- show this multiple times, marking previous selections

@@ -194,7 +194,7 @@ for i,v in ipairs(wesnoth.get_sides()) do
 		names[t_i] = t_v
 	end
 	
-	if v.controller == "human" then
+	if v.controller == "human" and v.is_local then
 		items_taken = 1
 		_side_number = i
 		while items_taken < 4 do

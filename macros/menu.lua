@@ -1,3 +1,4 @@
+--<<
 -- get input from each player
 local _random_id = "item_choice_random"
 
@@ -288,3 +289,4 @@ for i,v in ipairs(wesnoth.get_sides()) do
 	wesnoth.message("RR", "Received input from side " ..  tostring(i))
 	wesnoth.set_variable(tostring(i).."_items", 3)
 end
+-->>

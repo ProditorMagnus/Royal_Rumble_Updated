@@ -73,3 +73,7 @@ Limited random scrolls to 2
 2.0.3b
 
 Readd showing your unit before having to choose
+
+2.0.3c
+
+Fix included Lua loading

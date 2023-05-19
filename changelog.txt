@@ -89,3 +89,8 @@ Enable ayleidcrown immediately, even if not used from rightclick menu
 2.0.4b
 
 Avoid warning for unstoring empty variable
+
+2.0.4c
+
+Fix crown
+

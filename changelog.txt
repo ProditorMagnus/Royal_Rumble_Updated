@@ -77,3 +77,7 @@ Readd showing your unit before having to choose
 2.0.3c
 
 Fix included Lua loading
+
+2.0.4
+
+Syntax update for 1.16

@@ -216,7 +216,7 @@ for i,v in ipairs(wesnoth.get_sides()) do
 		local u = wesnoth.get_units({ side = i, canrecruit = true })[1]
 		wesnoth.fire("remove_shroud", { x=u.x, y=u.y })
 		wesnoth.fire("lift_fog", { x=u.x, y=u.y })
-		wesnoth.select_hex(u.x, u.y)
+		wesnoth.interface.highlight_hex(u.x, u.y)
 		wesnoth.fire("redraw")
 		-- wesnoth.show_dialog(delay_dialog, do_nothing, do_nothing)
 		while items_taken < 4 do

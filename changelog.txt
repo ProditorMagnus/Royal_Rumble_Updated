@@ -81,3 +81,7 @@ Fix included Lua loading
 2.0.4
 
 Syntax update for 1.16
+
+2.0.4a
+
+Enable ayleidcrown immediately, even if not used from rightclick menu
